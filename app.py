@@ -10,7 +10,6 @@ import os
 
 
 app = Flask(__name__)
-basedir = os.path.abspath(os.path.dirname(__file__))
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://tnxazjsczyqfck:de88e14b81c323fff046f60e99fad1e541ee947033d4d2be2d995e4fc9b2cef0@ec2-52-201-55-4.compute-1.amazonaws.com:5432/dblkq8te01snpp"
 
 
