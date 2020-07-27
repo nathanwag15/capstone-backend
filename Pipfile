@@ -13,6 +13,7 @@ marshmallow-sqlalchemy = "*"
 flask-cors = "*"
 flask-heroku = "*"
 gunicorn = "*"
+flask-bcrypt = "*"
 
 [requires]
 python_version = "3.8"
