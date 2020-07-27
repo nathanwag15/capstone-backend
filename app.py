@@ -26,8 +26,8 @@ bcrypt = Bcrypt(app)
 class Location(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     location = db.Column(db.String(), nullable=False)
-    lat = db.Column(db.Integer, nullable=False)
-    lon = db.Column(db.Integer, nullable=False)
+    lat = db.Column(db.DECIMAL(10, 8), nullable=False)
+    lon = db.Column(db.DECIMAL(11, 8), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
 
     def __init__(self, location, lat, lon, user_id):
