@@ -27,14 +27,14 @@ bcrypt = Bcrypt(app)
 class Location(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     location = db.Column(db.String(), nullable=False)
-    lat = db.Column(db.DECIMAL(9, 6), nullable=False)
-    lon = db.Column(db.DECIMAL(8, 6), nullable=False)
+    lat = db.Column(db.String(), nullable=False)
+    lon = db.Column(db.String(), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
 
     def __init__(self, location, lat, lon, user_id):
         self.location = location
-        self.lat = json.dump(decimal.Decimal(lat))
-        self.lon = json.dump(decimal.Decimal(lon))
+        self.lat = lat
+        self.lon = lon
         self.user_id = user_id
 
 class LocationSchema(ma.Schema):
